@@ -27,31 +27,31 @@ repos:
         require_serial: true
         types_or: [python, pyi]
         additional_dependencies: [black==23.3.0]
--   repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.270
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.2.1
     hooks:
     -   id: ruff
         args: [--exit-non-zero-on-fix]
 -   repo: https://github.com/jendrikseipp/vulture
-    rev: 'v2.7'
+    rev: 'v2.10'
     hooks:
       - id: vulture
         entry: python scripts/run_vulture.py
         pass_filenames: true
         require_serial: false
 -   repo: https://github.com/codespell-project/codespell
-    rev: v2.2.4
+    rev: v2.2.6
     hooks:
     -   id: codespell
         types_or: [python, rst, markdown, cython, c]
         additional_dependencies: [tomli]
 -   repo: https://github.com/MarcoGorelli/cython-lint
-    rev: v0.15.0
+    rev: v0.16.0
     hooks:
     -   id: cython-lint
     -   id: double-quote-cython-strings
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
     -   id: debug-statements
     -   id: end-of-file-fixer
@@ -75,7 +75,7 @@ repos:
             '--filter=-readability/casting,-runtime/int,-build/include_subdir,-readability/fn_size'
         ]
 -   repo: https://github.com/pycqa/pylint
-    rev: v3.0.0a6
+    rev: v3.0.3
     hooks:
     -   id: pylint
         stages: [manual]
@@ -99,11 +99,11 @@ repos:
         args: [--disable=all, --enable=unspecified-encoding]
         stages: [manual]
 -   repo: https://github.com/PyCQA/isort
-    rev: 5.12.0
+    rev: 5.13.2
     hooks:
     -   id: isort
 -   repo: https://github.com/asottile/pyupgrade
-    rev: v3.4.0
+    rev: v3.15.0
     hooks:
     -   id: pyupgrade
         args: [--py38-plus]
@@ -118,7 +118,7 @@ repos:
         types: [text]  # overwrite types: [rst]
         types_or: [python, rst]
 -   repo: https://github.com/sphinx-contrib/sphinx-lint
-    rev: v0.6.7
+    rev: v0.9.1
     hooks:
     - id: sphinx-lint
 -   repo: local
