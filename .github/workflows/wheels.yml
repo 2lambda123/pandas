@@ -62,7 +62,7 @@ jobs:
           python -m pip install build
           python -m build --sdist
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: sdist
           path: ./dist/*
@@ -144,7 +144,7 @@ jobs:
           docker pull python:${{ matrix.python[1] }}-windowsservercore
           docker run --env PANDAS_CI='1' -v ${PWD}:C:\pandas python:${{ matrix.python[1] }}-windowsservercore powershell -Command $TST_CMD
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.python[0] }}-${{ startsWith(matrix.buildplat[1], 'macosx') && 'macosx' || matrix.buildplat[1] }}
           path: ./wheelhouse/*.whl
