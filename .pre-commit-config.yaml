@@ -28,7 +28,7 @@ repos:
         types_or: [python, pyi]
         additional_dependencies: [black==23.3.0]
 -   repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.5.2
+    rev: v0.5.4
     hooks:
     -   id: ruff
         args: [--exit-non-zero-on-fix]
@@ -75,7 +75,7 @@ repos:
             '--filter=-readability/casting,-runtime/int,-build/include_subdir,-readability/fn_size'
         ]
 -   repo: https://github.com/pycqa/pylint
-    rev: v3.2.5
+    rev: v3.2.6
     hooks:
     -   id: pylint
         stages: [manual]
