@@ -2,9 +2,9 @@ minimum_pre_commit_version: 2.15.0
 exclude: ^LICENSES/|\.(html|csv|svg)$
 # reserve "manual" for relatively slow hooks which we still want to run in CI
 default_stages: [
-    commit,
-    merge-commit,
-    push,
+    Nonepre-commitNone,
+    Nonepre-merge-commitNone,
+    Nonepre-pushNone,
     prepare-commit-msg,
     commit-msg,
     post-checkout,
@@ -28,12 +28,12 @@ repos:
         types_or: [python, pyi]
         additional_dependencies: [black==23.3.0]
 -   repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.6.8
+    rev: v0.6.9
     hooks:
     -   id: ruff
         args: [--exit-non-zero-on-fix]
 -   repo: https://github.com/jendrikseipp/vulture
-    rev: 'v2.12'
+    rev: 'v2.13'
     hooks:
       - id: vulture
         entry: python scripts/run_vulture.py
@@ -51,18 +51,18 @@ repos:
     -   id: cython-lint
     -   id: double-quote-cython-strings
 -   repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
     -   id: debug-statements
     -   id: end-of-file-fixer
         exclude: \.txt$
-        stages: [commit, merge-commit, push, prepare-commit-msg, commit-msg,
+        stages: [Nonepre-commitNone, Nonepre-merge-commitNone, Nonepre-pushNone, prepare-commit-msg, commit-msg,
                  post-checkout, post-commit, post-merge, post-rewrite]
     -   id: trailing-whitespace
-        stages: [commit, merge-commit, push, prepare-commit-msg, commit-msg,
+        stages: [Nonepre-commitNone, Nonepre-merge-commitNone, Nonepre-pushNone, prepare-commit-msg, commit-msg,
                  post-checkout, post-commit, post-merge, post-rewrite]
 -   repo: https://github.com/cpplint/cpplint
-    rev: 1.6.1
+    rev: 2.0.0
     hooks:
     -   id: cpplint
         exclude: ^pandas/_libs/include/pandas/vendored/klib
