@@ -28,7 +28,7 @@ repos:
         types_or: [python, pyi]
         additional_dependencies: [black==23.3.0]
 -   repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.9.3
+    rev: v0.9.4
     hooks:
     -   id: ruff
         args: [--exit-non-zero-on-fix]
@@ -40,7 +40,7 @@ repos:
         pass_filenames: true
         require_serial: false
 -   repo: https://github.com/codespell-project/codespell
-    rev: v2.4.0
+    rev: v2.4.1
     hooks:
     -   id: codespell
         types_or: [python, rst, markdown, cython, c]
@@ -75,7 +75,7 @@ repos:
             '--filter=-readability/casting,-runtime/int,-build/include_subdir,-readability/fn_size'
         ]
 -   repo: https://github.com/pycqa/pylint
-    rev: v3.3.3
+    rev: v3.3.4
     hooks:
     -   id: pylint
         stages: [manual]
@@ -99,7 +99,7 @@ repos:
         args: [--disable=all, --enable=unspecified-encoding]
         stages: [manual]
 -   repo: https://github.com/PyCQA/isort
-    rev: 5.13.2
+    rev: 6.0.0
     hooks:
     -   id: isort
 -   repo: https://github.com/asottile/pyupgrade
